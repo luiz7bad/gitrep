@@ -10,6 +10,7 @@ public class Mergesort {
 		
 	public static void main (String args[])
 	{
+            //teste
 		int x;
 		System.out.println("Entrada sem ordenação: " + Arrays.toString(entrada));
 		copia = new int[entrada.length];
