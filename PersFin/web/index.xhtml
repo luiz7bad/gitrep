@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Cadastros</title>
+    </h:head>
+    <h:body>
+        <h1>Personal Finance</h1>
+        <h:form>
+        <h:outputText id="rendimentos" value="Seus rendimentos: "/>
+        <h:inputText id="inrendimentos" value="#{CadastroMB.rendimento}"/>
+        <hr />
+        <h:outputText id="contames3" value="Total Gastos 3 meses atrás: "/>
+        <h:inputText id="contames3in" value="#{CadastroMB.contames3}"/>
+        <br></br>
+        <h:outputText id="contames2" value="Total Gastos 2 meses atrás: "/>
+        <h:inputText id="contames2in" value="#{CadastroMB.contames2}"/>
+        <br></br>
+        <h:outputText id="contames1" value="Total Gastos 1 mês atrás: &nbsp; &nbsp;"/>
+        <h:inputText id="contames1in" value="#{CadastroMB.contames1}"/>
+        <br></br>
+        <h:commandButton id="totalconta" value="Calcular: " actionListener="#{CadastroMB.valorTotal()}"/>
+        <h:commandButton id="refresh" value="Limpar Campos" actionListener="#{CadastroMB.limpa()}"/>
+        <br></br>
+        <h:outputLabel id="total" value="Previsão de Gastos: #{CadastroMB.totalContas}"/>
+        <br></br>
+        <h:outputLabel id="livre" value="Orçamento Livre: #{CadastroMB.livre}"/>
+        <br></br>
+        <h:outputLabel id="dispInvest" value="Disponivel para Investimento: #{CadastroMB.disponivelInvestir}"/>
+        <br></br>
+        <hr />
+        <hr />
+        <hr />
+        <h1>Cadastrar Data Vencimento</h1>
+        <h:outputText id="tipoConta" value="Tipo de conta: "/>
+        <h:inputText id="tipo" value="#{CadastroMB.tipoConta}"/>
+        <h:outputText id="dataVenc" value="Data de Vencimento: "/>
+        <p:calendar id="caledata" value="#{CadastroMB.dataVencimento}"/>
+        <h:outputText id="valconta" value="Valor da Conta: "/>
+        <h:inputText id="valorconta" value="#{CadastroMB.valorConta}"/>
+        <br></br>
+        <h:commandButton id="salvar" value="Cadastrar: " actionListener="#{CadastroMB.Inserir()}"/>
+        <hr />
+        <hr />
+        </h:form>
+    </h:body>
+</html>
+
